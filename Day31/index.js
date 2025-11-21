@@ -48,7 +48,7 @@ app.get("/:username/:id", (req, res) => {
 app.get("/search",(req, res) =>{
     let {q} = req.query;
     if(!q){
-        res.send("Nothing search")
+        res.send("Nothing search");
     }
     res.send(`Hello : ${q}`);
 })
