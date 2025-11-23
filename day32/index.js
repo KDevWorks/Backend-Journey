@@ -1,4 +1,3 @@
-
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -21,10 +20,11 @@ app.get("/dice", (req, res) => {
     res.render("diceval", { val });
 });
 
-app.get("/ig/:username", (req, res) => {
+app.get("/ig/:username/:password", (req, res) => {
     let { username } = req.params;
     console.log(username);
-    res.render("instagram", {username});
+    let followers = ["danny","arya", "sansa", "rob", "belish"];
+    res.render("instagram", {username,followers});
     // res.render("insta",)
 })
 
@@ -33,3 +33,7 @@ app.get("/ig/:username", (req, res) => {
 app.listen(port, () => {
     console.log("Listening no port: ", port);
 });
+
+app.get("/",(req,res)=>{
+    console.log("reqest was sent from local fort");
+})
