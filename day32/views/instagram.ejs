@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
 </head>
-
 <body>
-    <h2>Thispage belongs to @<%= username %>
-    </h2>
-    <button>Follow</button>
+    <h1>This page belongs to @<%= username %></h1>
+    <button>Follow </button>
     <button>Message</button>
-
-    <h2>Account's that follow you : </h2>
     <ul>
-        <% for(let name of followers) { %>
+        <% for(let name of followers){ %>
             <li><%= name %></li>
-            <% } %>
+        <% } %>
     </ul>
-
 </body>
-
 </html>
