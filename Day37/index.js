@@ -13,9 +13,14 @@
 
 const mysql = require("mysql2");
 
-const connection = mysql.createConnection({
-   
-});
+const connection = mysql.createConnection(
+    {
+        host: "localhost",
+        user: "root",
+        password: "Krishna@4476",
+        database: "college"
+    }
+);
 
 connection.connect((err) => {
     if (err) throw err;
@@ -49,13 +54,14 @@ let user = [
 
 const sql = `INSERT INTO userInfo (userid, username, email, password) VALUES ?`;
 
-connection.query(sql, [user], (err, result) => {
-    if (err) throw err;
-    console.log("User inserted:", result);
-});
+// connection.query(sql, [user], (err, result) => {
+//     if (err) throw err;
+//     console.log("User inserted:", result);
+// });
 
 connection.query("SELECT * FROM UserInfo;", (err, result) => {
     console.log(result);
 })
 // // Close connection
 connection.end();
+

@@ -1,0 +1,21 @@
+table,
+th,
+td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+button {
+    background-color: rgb(75, 128, 244);
+    color: white;
+    border-radius: 25%;
+    height: 40px;
+    width: 90px;
+    border-color: red;
+}
+.newuser{
+    height: 40px;
+    width: 200px;
+    margin-bottom: 10px;
+}
