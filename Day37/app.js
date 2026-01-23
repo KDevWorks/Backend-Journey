@@ -1,4 +1,5 @@
 const mysql = require("mysql2");
+const { faker } = require('@faker-js/faker');
 const express = require("express");
 const app = express();
 
@@ -121,24 +122,43 @@ app.get("/user/:id/delete", (req, res) => {
         res.render("delete.ejs", { userInfo });
 
         app.delete("/user/:id", (req, res) => {
-            // res.send("delete user");
 
             let { email: userEmail, password: userPass } = req.body;
             console.log(userEmail + userPass);
 
             if (userInfo.email != userEmail && userInfo.password != userPass) {
-                console.log("Wrong email and password");
+                res.send("Wrong email and password");
             } else {
                 let q5 = `DELETE FROM empInfo WHERE id= '${id}' `
                 connection.query(q5, (err, result) => {
                     if (err) throw err;
                     res.redirect("/user");
-                })
+                });
 
-            }
+            };
 
-        })
+        });
 
+    });
+
+});
+
+app.get("/user/add", (req, res) => {
+    res.render("newReg.ejs");
+})
+
+app.post("/user", (req, res) => {
+    let { username: nUser, email: nEmail, password: nPass } = req.body;
+    let getRandomUser = () => {
+        return [
+            faker.string.uuid(),
+        ];
+    };
+    let id = getRandomUser();
+    console.log(id)
+    let q6 = `INSERT INTO empInfo(id,username, email , password ) VALUES('${id}','${nUser}','${nEmail}','${nPass}')`;
+    connection.query(q6, (err, result) => {
+        res.redirect("/user");
     })
 
 })

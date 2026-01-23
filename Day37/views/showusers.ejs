@@ -11,9 +11,8 @@
 <body>
     <h2>All Users Information</h2>
     <table>
-        <form method action="/user/<%= %>/delete?_method=DELETE">
-            <button class="newuser">Add New User</button>
-        </form> <br>
+        <a href="http://localhost:8000/user/add">
+        <button class="newuser" >Add New User</button></a><br>
         <thead>
             <tr>
                 <th>ID</th>
@@ -39,7 +38,7 @@
                         </form>
                     </td>
                     <td>
-                       <form method="get" action="/user/<%= user.id %>/delete">
+                        <form method="get" action="/user/<%= user.id %>/delete">
                             <button type="submit">Delete User</button>
                         </form>
                     </td>
