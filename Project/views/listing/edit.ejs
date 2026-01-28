@@ -1,0 +1,14 @@
+<% layout("/layouts/biolerplate.ejs") %>
+
+<body>
+    <h2>Edit Your Listing</h2>
+     <form action="/list/<%=listing._id%>/edit?_method=PUT" method="POST">
+        <input value="<%=listing.title %>" type="text" name="title"> <br> <br>
+        <textarea name="description" rows="6" cols="30"><%=listing.description %></textarea> <br> <br>
+        <input value="<%=listing.image.url %>"  type="text" name="image" > <br><br>
+        <input value="<%=listing.price %>" type="text" name="price"> <br> <br>
+        <input value="<%=listing.location %>" type="text" name="location"> <br> <br>
+        <input value="<%=listing.country %>" type="text" name="country"> <br> <br>
+        <button>Add</button>
+    </form>
+</body>

@@ -1,0 +1,20 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> -->
+
+<% layout("/layouts/biolerplate.ejs") %>
+<body>
+    <form action="/list/new/add" method="POST">
+        <input placeholder="Enter Title" type="text" name="title"> <br> <br>
+        <textarea placeholder="Enter a Description" name="description"></textarea> <br> <br>
+        <input placeholder="Enter image URL" type="text" name="image" > <br><br>
+        <input placeholder="Enter a Price" type="text" name="price"> <br> <br>
+        <input placeholder="Enter Location" type="text" name="location"> <br> <br>
+        <input placeholder="Enter Country" type="text" name="country"> <br> <br>
+        <button>Add</button>
+    </form>
+</body>
